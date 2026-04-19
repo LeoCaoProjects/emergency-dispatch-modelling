@@ -63,15 +63,18 @@ namespace EmergencyDispatchSystem.Core
 
         public void setStatus(string status)
         {
+            this.status = status;
         }
 
         public string getStatus()
         {
-            return "";
+            return this.status;
         }
 
         public void addUnit(RespondingUnit u)
         {
+            this.assignedUnits.Add(u);
+            Console.WriteLine("[EmergencyCase] Unit " + u.UnitId + " added to Case " + caseId);
         }
     }
 }

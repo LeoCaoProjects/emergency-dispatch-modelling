@@ -1,0 +1,15 @@
+C:\Users\leoca\St-John-Dispatch-System\EmergencyDispatchSystem\bin\Debug\net8.0\EmergencyDispatchSystem.exe
+C:\Users\leoca\St-John-Dispatch-System\EmergencyDispatchSystem\bin\Debug\net8.0\EmergencyDispatchSystem.deps.json
+C:\Users\leoca\St-John-Dispatch-System\EmergencyDispatchSystem\bin\Debug\net8.0\EmergencyDispatchSystem.runtimeconfig.json
+C:\Users\leoca\St-John-Dispatch-System\EmergencyDispatchSystem\bin\Debug\net8.0\EmergencyDispatchSystem.dll
+C:\Users\leoca\St-John-Dispatch-System\EmergencyDispatchSystem\bin\Debug\net8.0\EmergencyDispatchSystem.pdb
+C:\Users\leoca\St-John-Dispatch-System\EmergencyDispatchSystem\obj\Debug\net8.0\EmergencyDispatchSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leoca\St-John-Dispatch-System\EmergencyDispatchSystem\obj\Debug\net8.0\EmergencyDispatchSystem.AssemblyInfoInputs.cache
+C:\Users\leoca\St-John-Dispatch-System\EmergencyDispatchSystem\obj\Debug\net8.0\EmergencyDispatchSystem.AssemblyInfo.cs
+C:\Users\leoca\St-John-Dispatch-System\EmergencyDispatchSystem\obj\Debug\net8.0\EmergencyDispatchSystem.csproj.CoreCompileInputs.cache
+C:\Users\leoca\St-John-Dispatch-System\EmergencyDispatchSystem\obj\Debug\net8.0\EmergencyDispatchSystem.sourcelink.json
+C:\Users\leoca\St-John-Dispatch-System\EmergencyDispatchSystem\obj\Debug\net8.0\EmergencyDispatchSystem.dll
+C:\Users\leoca\St-John-Dispatch-System\EmergencyDispatchSystem\obj\Debug\net8.0\refint\EmergencyDispatchSystem.dll
+C:\Users\leoca\St-John-Dispatch-System\EmergencyDispatchSystem\obj\Debug\net8.0\EmergencyDispatchSystem.pdb
+C:\Users\leoca\St-John-Dispatch-System\EmergencyDispatchSystem\obj\Debug\net8.0\EmergencyDispatchSystem.genruntimeconfig.cache
+C:\Users\leoca\St-John-Dispatch-System\EmergencyDispatchSystem\obj\Debug\net8.0\ref\EmergencyDispatchSystem.dll

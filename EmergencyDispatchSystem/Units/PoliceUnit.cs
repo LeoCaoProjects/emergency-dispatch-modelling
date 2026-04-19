@@ -30,6 +30,7 @@ namespace EmergencyDispatchSystem.Units
 
         public void requestReinforcements()
         {
+            Console.WriteLine("[" + UnitId + "] Requesting reinforcements through Dispatcher.");
         }
     }
 }

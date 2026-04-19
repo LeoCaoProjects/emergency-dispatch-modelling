@@ -29,12 +29,12 @@ namespace EmergencyDispatchSystem.EmergencyTypes
 
         public override string getTypeDetails()
         {
-            return "";
+            return "(Police) Threat Level: " + threatLevel + ", Suspect Present: " + suspectPresent;
         }
 
         public string getThreatLevel()
         {
-            return "";
+            return this.threatLevel;
         }
     }
 }

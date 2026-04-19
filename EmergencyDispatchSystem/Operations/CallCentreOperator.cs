@@ -26,11 +26,16 @@ namespace EmergencyDispatchSystem.Operations
 
         public EmergencyCase logEmergencyCall()
         {
-            return null;
+            string caseId = DateTime.UtcNow.Ticks.ToString().Substring(10, 5);
+            EmergencyCase ec = new EmergencyCase(caseId, "NZ");
+            Console.WriteLine("[Call Centre Operator " + operatorId + "] Emergency call logged for Case ID " + caseId);
+            return ec;
         }
 
         public void assignSeverityLevel(EmergencyCase c)
         {
+            c.SeverityLevel = "Critical";
+            Console.WriteLine("[Call Centre Operator " + operatorId + "] Severity set to Critical for Case " + c.CaseId);
         }
     }
 }

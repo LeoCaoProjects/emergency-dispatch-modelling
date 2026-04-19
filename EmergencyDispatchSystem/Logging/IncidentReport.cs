@@ -40,6 +40,11 @@ namespace EmergencyDispatchSystem.Logging
 
         public void generateReport(EmergencyCase c)
         {
+            this.reportId = "Report Id: " + c.CaseId;
+            this.caseId = c.CaseId;
+            this.generatedAt = DateTime.UtcNow;
+            this.outcome = c.getStatus();
+            Console.WriteLine("[REPORT] " + reportId + " generated for Case " + caseId + ", Outcome: " + outcome);
         }
     }
 }

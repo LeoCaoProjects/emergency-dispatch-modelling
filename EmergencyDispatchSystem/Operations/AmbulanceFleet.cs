@@ -25,17 +25,30 @@ namespace EmergencyDispatchSystem.Operations
             get { return units; }
         }
 
+        public void addUnit(AmbulanceUnit u)
+        {
+            units.Add(u);
+        }
+
         public List<AmbulanceUnit> getAvailableUnits()
         {
-            return new List<AmbulanceUnit>();
+            return units.FindAll(u => u.isAvailable());
         }
 
         public void returnUnitToAvailable(string id)
         {
+            AmbulanceUnit u = units.Find(u => u.UnitId == id);
+            if (u != null)
+            {
+                u.setStatus("Available");
+                Console.WriteLine("[FLEET] Unit " + id + " returned to Available.");
+            }
         }
 
         public void updateUnitStatus(string id, string s)
         {
+            AmbulanceUnit u = units.Find(u => u.UnitId == id);
+            if (u != null) u.setStatus(s);
         }
     }
 }

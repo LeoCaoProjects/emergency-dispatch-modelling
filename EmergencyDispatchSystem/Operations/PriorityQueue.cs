@@ -20,11 +20,17 @@ namespace EmergencyDispatchSystem.Operations
 
         public void enqueue(EmergencyCase c)
         {
+            cases.Add(c);
+            Console.WriteLine("[QUEUE] Case " + c.CaseId + " enqueued (Severity: " + c.SeverityLevel + ").");
         }
 
         public EmergencyCase dequeue()
         {
-            return null;
+            if (isEmpty()) return null;
+            EmergencyCase c = cases[0];
+            cases.RemoveAt(0);
+            Console.WriteLine("[QUEUE] Case " + c.CaseId + " dequeued for dispatch.");
+            return c;
         }
 
         public void sortBySeverity()
@@ -33,7 +39,7 @@ namespace EmergencyDispatchSystem.Operations
 
         public bool isEmpty()
         {
-            return false;
+            return cases.Count == 0;
         }
     }
 }

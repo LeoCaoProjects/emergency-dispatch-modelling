@@ -26,14 +26,22 @@ namespace EmergencyDispatchSystem.Operations
 
         public void assignUnit(RespondingUnit u, EmergencyCase c)
         {
+            u.setStatus("En Route");
+            c.addUnit(u);
+            Console.WriteLine("[DISPATCHER " + dispatcherId + "] " + u.UnitId + " assigned to Case " + c.CaseId + ".");
         }
 
         public void reassignUnit(RespondingUnit u, EmergencyCase c)
         {
+            u.setStatus("En Route");
+            c.addUnit(u);
+            Console.WriteLine("[DISPATCHER " + dispatcherId + "] " + u.UnitId + " reassigned to Case " + c.CaseId + ".");
         }
 
         public void dispatchSupportUnit(RespondingUnit u)
         {
+            u.setStatus("En Route");
+            Console.WriteLine("[DISPATCHER " + dispatcherId + "] Support unit " + u.UnitId + " dispatched.");
         }
 
         public void alertCriticalCase(EmergencyCase c)

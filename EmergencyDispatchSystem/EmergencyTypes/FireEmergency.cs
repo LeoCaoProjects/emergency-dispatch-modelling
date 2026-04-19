@@ -29,12 +29,12 @@ namespace EmergencyDispatchSystem.EmergencyTypes
 
         public override string getTypeDetails()
         {
-            return "";
+            return "(Fire) Hazard Level: " + hazardLevel + ", Evacuation Required: " + requiresEvacuation;
         }
 
         public string getHazardLevel()
         {
-            return "";
+            return this.hazardLevel;
         }
     }
 }

@@ -29,10 +29,13 @@ namespace EmergencyDispatchSystem.Units
 
         public void flagIssue(string desc)
         {
+            Console.WriteLine("[" + UnitId + "] Issue flagged: " + desc);
         }
 
         public void updateStatus(string status)
         {
+            setStatus(status);
+            Console.WriteLine("[" + UnitId + "] Status updated to: " + status);
         }
     }
 }

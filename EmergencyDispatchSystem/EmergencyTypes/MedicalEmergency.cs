@@ -29,12 +29,12 @@ namespace EmergencyDispatchSystem.EmergencyTypes
 
         public override string getTypeDetails()
         {
-            return "";
+            return "(Medical) Condition: " + patientCondition + ", Transport Required: " + requiresTransport;
         }
 
         public bool needsTransport()
         {
-            return false;
+            return this.requiresTransport;
         }
     }
 }

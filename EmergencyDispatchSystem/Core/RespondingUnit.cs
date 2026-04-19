@@ -35,11 +35,12 @@ namespace EmergencyDispatchSystem.Core
 
         public void setStatus(string s)
         {
+            this.status = s;
         }
 
         public bool isAvailable()
         {
-            return false;
+            return this.status == "Available";
         }
     }
 }
