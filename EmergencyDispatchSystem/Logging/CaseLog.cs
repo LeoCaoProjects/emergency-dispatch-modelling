@@ -44,6 +44,7 @@ namespace EmergencyDispatchSystem.Logging
             get { return performedBy; }
         }
 
+        // Create a entry when an action happens
         public void createEntry(string caseId, string action)
         {
             Console.WriteLine("[LOG] " + timestamp.ToString("HH:mm:ss") + ", Case " + caseId + ", " + action + ", By: " + performedBy);

@@ -38,6 +38,7 @@ namespace EmergencyDispatchSystem.Logging
             get { return outcome; }
         }
 
+        // Create a report when a case gets created
         public void generateReport(EmergencyCase c)
         {
             this.reportId = "Report Id: " + c.CaseId;

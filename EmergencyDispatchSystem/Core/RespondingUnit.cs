@@ -38,6 +38,7 @@ namespace EmergencyDispatchSystem.Core
             this.status = s;
         }
 
+        // Check if the unit is avaliable for case assignment
         public bool isAvailable()
         {
             return this.status == "Available";

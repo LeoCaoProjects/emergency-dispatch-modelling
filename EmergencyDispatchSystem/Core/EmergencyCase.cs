@@ -71,6 +71,7 @@ namespace EmergencyDispatchSystem.Core
             return this.status;
         }
 
+        // Asigning a unit to the case
         public void addUnit(RespondingUnit u)
         {
             this.assignedUnits.Add(u);

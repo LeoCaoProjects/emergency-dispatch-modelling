@@ -24,6 +24,7 @@ namespace EmergencyDispatchSystem.Operations
             get { return name; }
         }
 
+        // Create and log an case whenever the operator recieves an emergency call
         public EmergencyCase logEmergencyCall()
         {
             string caseId = DateTime.UtcNow.Ticks.ToString().Substring(10, 5);
@@ -32,6 +33,7 @@ namespace EmergencyDispatchSystem.Operations
             return ec;
         }
 
+        // Update the severity level of the case
         public void assignSeverityLevel(EmergencyCase c)
         {
             c.SeverityLevel = "Critical";

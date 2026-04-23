@@ -18,12 +18,14 @@ namespace EmergencyDispatchSystem.Operations
             get { return cases; }
         }
 
+        // Add the case to the queue
         public void enqueue(EmergencyCase c)
         {
             cases.Add(c);
             Console.WriteLine("[QUEUE] Case " + c.CaseId + " enqueued (Severity: " + c.SeverityLevel + ").");
         }
 
+        // Remove a case from the queue (front of the queue)
         public EmergencyCase dequeue()
         {
             if (isEmpty()) return null;

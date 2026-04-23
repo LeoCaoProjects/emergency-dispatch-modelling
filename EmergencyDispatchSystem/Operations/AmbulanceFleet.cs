@@ -7,7 +7,7 @@ namespace EmergencyDispatchSystem.Operations
     public class AmbulanceFleet
     {
         private string fleetId;
-        private List<AmbulanceUnit> units;
+        private List<AmbulanceUnit> units;                      // List of all ambulence units this class handles
 
         public AmbulanceFleet(string fleetId)
         {
@@ -35,6 +35,7 @@ namespace EmergencyDispatchSystem.Operations
             return units.FindAll(u => u.isAvailable());
         }
 
+        // Find the ambulence unit and return it to avaliable status (when it completes the case)
         public void returnUnitToAvailable(string id)
         {
             AmbulanceUnit u = units.Find(u => u.UnitId == id);
@@ -45,6 +46,7 @@ namespace EmergencyDispatchSystem.Operations
             }
         }
 
+        // Update the status of the ambulence
         public void updateUnitStatus(string id, string s)
         {
             AmbulanceUnit u = units.Find(u => u.UnitId == id);
