@@ -19,8 +19,8 @@ namespace EmergencyDispatchSystem
             AmbulanceUnit ambulance = new AmbulanceUnit("AMB-01", "", 2, "");
             fleet.addUnit(ambulance);
             Dispatcher dispatcher = new Dispatcher("D-01", "Leo", fleet);
-            PriorityQueue queue = new PriorityQueue();
-            CallCentreOperator cco = new CallCentreOperator("CCO-01", "James", queue);
+            PriorityQueue queue = PriorityQueue.GetInstance();
+            CallCentreOperator cco = new CallCentreOperator("CCO-01", "James");
 
             // The call centre operator logs a call onto the system
             Console.WriteLine("(call centre operator logs emergency call)");

@@ -7,13 +7,12 @@ namespace EmergencyDispatchSystem.Operations
     {
         private string operatorId;
         private string name;
-        private PriorityQueue priorityQueue;
+        private PriorityQueue priorityQueue = PriorityQueue.GetInstance();
 
-        public CallCentreOperator(string operatorId, string name, PriorityQueue priorityQueue)
+        public CallCentreOperator(string operatorId, string name)
         {
             this.operatorId = operatorId;
             this.name = name;
-            this.priorityQueue = priorityQueue;
         }
 
         public string OperatorId

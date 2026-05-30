@@ -7,11 +7,27 @@ namespace EmergencyDispatchSystem.Operations
     public class PriorityQueue
     {
         private List<EmergencyCase> cases;
+        // Static variable that stores the single instance of the class
+        private static PriorityQueue instance;
 
-        public PriorityQueue()
+        // Private constructor prevents object creation using 'new'
+        private PriorityQueue()
         {
             this.cases = new List<EmergencyCase>();
         }
+
+         // Public static method provides global access to the Singleton object
+        public static PriorityQueue GetInstance() {
+
+            // Create the object only if it does not already exist
+            if (instance == null) {
+                instance = new PriorityQueue();
+            }
+
+            // Return the same object instance
+            return instance;                    
+        }
+
 
         public List<EmergencyCase> Cases
         {
