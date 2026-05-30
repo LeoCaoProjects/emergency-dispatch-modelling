@@ -48,7 +48,10 @@ namespace EmergencyDispatchSystem.Operations
         // dispatch extra support units
         public void dispatchSupportUnit(RespondingUnit u)
         {
-            u.setStatus(UnitStatus.EnRoute);
+            if (u is AmbulanceUnit ambulance)
+            {
+                ambulance.updateStatus(UnitStatus.EnRoute);
+            }
             Console.WriteLine("[DISPATCHER " + dispatcherId + "] Support unit " + u.UnitId + " dispatched.");
         }
     }

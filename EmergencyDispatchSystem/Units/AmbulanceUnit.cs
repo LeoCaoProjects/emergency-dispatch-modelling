@@ -7,12 +7,14 @@ namespace EmergencyDispatchSystem.Units
     {
         private int crewSize;
         private string vehicleType;
+        private UnitStatus status;
 
         public AmbulanceUnit(string unitId, string location, int crewSize, string vehicleType)
             : base(unitId, location)
         {
             this.crewSize = crewSize;
             this.vehicleType = vehicleType;
+            this.status = UnitStatus.Available;
         }
 
         public int CrewSize
@@ -27,6 +29,11 @@ namespace EmergencyDispatchSystem.Units
             set { vehicleType = value; }
         }
 
+        public bool isAvailable()
+        {
+            return status == UnitStatus.Available;
+        }
+
         public void flagIssue(string desc)
         {
             Console.WriteLine("[" + UnitId + "] Issue flagged: " + desc);
@@ -34,7 +41,7 @@ namespace EmergencyDispatchSystem.Units
 
         public void updateStatus(UnitStatus status)
         {
-            setStatus(status);
+            this.status = status;
             Console.WriteLine("[" + UnitId + "] Status updated to: " + status);
         }
     }

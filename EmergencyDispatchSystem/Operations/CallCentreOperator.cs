@@ -7,11 +7,13 @@ namespace EmergencyDispatchSystem.Operations
     {
         private string operatorId;
         private string name;
+        private PriorityQueue priorityQueue;
 
-        public CallCentreOperator(string operatorId, string name)
+        public CallCentreOperator(string operatorId, string name, PriorityQueue priorityQueue)
         {
             this.operatorId = operatorId;
             this.name = name;
+            this.priorityQueue = priorityQueue;
         }
 
         public string OperatorId
@@ -30,6 +32,7 @@ namespace EmergencyDispatchSystem.Operations
             string caseId = DateTime.UtcNow.Ticks.ToString().Substring(10, 5);
             EmergencyCase ec = new EmergencyCase(caseId, "NZ");
             Console.WriteLine("[Call Centre Operator " + operatorId + "] Emergency call logged for Case ID " + caseId);
+            priorityQueue.enqueue(ec);
             return ec;
         }
 

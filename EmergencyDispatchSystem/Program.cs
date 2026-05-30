@@ -20,17 +20,13 @@ namespace EmergencyDispatchSystem
             fleet.addUnit(ambulance);
             Dispatcher dispatcher = new Dispatcher("D-01", "Leo", fleet);
             PriorityQueue queue = new PriorityQueue();
-            CallCentreOperator cco = new CallCentreOperator("CCO-01", "James");
+            CallCentreOperator cco = new CallCentreOperator("CCO-01", "James", queue);
 
             // The call centre operator logs a call onto the system
             Console.WriteLine("(call centre operator logs emergency call)");
             EmergencyCase ec = cco.logEmergencyCall();
             cco.assignSeverityLevel(ec);
             ec.Type = new MedicalEmergency("", true);
-
-            // The case enters the queue
-            Console.WriteLine("\n(Case enters Priority Queue)");
-            queue.enqueue(ec);
 
             // Dispatcher assigns a unit to a case in the queue
             Console.WriteLine("\n(Dispatcher assigns unit to the case)");
