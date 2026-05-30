@@ -1,6 +1,8 @@
-# Build output
-bin/
-obj/
+# .NET build output
+[Bb]in/
+[Oo]bj/
 
-# Visual Studio
+# Visual Studio / Rider
 .vs/
+*.user
+*.suo

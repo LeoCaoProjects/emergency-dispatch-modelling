@@ -32,7 +32,7 @@ namespace EmergencyDispatchSystem.Operations
         {
             AmbulanceUnit unit = fleet.getAvailableUnit();
             c.addUnit(unit);
-            fleet.updateUnitStatus(unit.UnitId, UnitStatus.EnRoute);
+            unit.updateStatus(UnitStatus.EnRoute);
             Console.WriteLine("[DISPATCHER " + dispatcherId + "] " + unit.UnitId + " assigned to Case " + c.CaseId + ".");
         }
 
@@ -41,7 +41,7 @@ namespace EmergencyDispatchSystem.Operations
         {
             AmbulanceUnit unit = fleet.getAvailableUnit();
             c.addUnit(unit);
-            fleet.updateUnitStatus(unit.UnitId, UnitStatus.EnRoute);
+            unit.updateStatus(UnitStatus.EnRoute);
             Console.WriteLine("[DISPATCHER " + dispatcherId + "] " + unit.UnitId + " reassigned to Case " + c.CaseId + ".");
         }
 
@@ -50,10 +50,6 @@ namespace EmergencyDispatchSystem.Operations
         {
             u.setStatus(UnitStatus.EnRoute);
             Console.WriteLine("[DISPATCHER " + dispatcherId + "] Support unit " + u.UnitId + " dispatched.");
-        }
-
-        public void alertCriticalCase(EmergencyCase c)
-        {
         }
     }
 }

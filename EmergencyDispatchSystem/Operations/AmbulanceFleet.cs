@@ -35,23 +35,5 @@ namespace EmergencyDispatchSystem.Operations
         {
             return units.Find(u => u.isAvailable());
         }
-
-        // Find the ambulence unit and return it to avaliable status (when it completes the case)
-        public void returnUnitToAvailable(string id)
-        {
-            AmbulanceUnit u = units.Find(u => u.UnitId == id);
-            if (u != null)
-            {
-                u.setStatus(UnitStatus.Available);
-                Console.WriteLine("[FLEET] Unit " + id + " returned to Available.");
-            }
-        }
-
-        // Update the status of the ambulence
-        public void updateUnitStatus(string id, UnitStatus s)
-        {
-            AmbulanceUnit u = units.Find(u => u.UnitId == id);
-            if (u != null) u.setStatus(s);
-        }
     }
 }

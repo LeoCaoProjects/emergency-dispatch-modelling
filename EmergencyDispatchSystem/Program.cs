@@ -56,7 +56,7 @@ namespace EmergencyDispatchSystem
             active.setStatus(CaseStatus.Resolved);
             IncidentReport report = new IncidentReport();
             report.generateReport(active);
-            fleet.returnUnitToAvailable("AMB-01");
+            ambulance.updateStatus(UnitStatus.Available);
         }
     }
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EmergencyDispatchSystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+badf70ed9d8b46fe1be6e903df4b1d32bb0ed02d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7750bd9097797a80f154702f830e3c84df113fab")]
 [assembly: System.Reflection.AssemblyProductAttribute("EmergencyDispatchSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EmergencyDispatchSystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
