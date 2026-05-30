@@ -15,10 +15,10 @@ namespace EmergencyDispatchSystem
             Console.WriteLine("Emergency Dispatch System Demo\n");
 
             // Setup 
-            Dispatcher dispatcher = new Dispatcher("D-01", "Leo");
             AmbulanceFleet fleet = new AmbulanceFleet("FLEET-01");
             AmbulanceUnit ambulance = new AmbulanceUnit("AMB-01", "", 2, "");
             fleet.addUnit(ambulance);
+            Dispatcher dispatcher = new Dispatcher("D-01", "Leo", fleet);
             PriorityQueue queue = new PriorityQueue();
             CallCentreOperator cco = new CallCentreOperator("CCO-01", "James");
 
@@ -35,7 +35,7 @@ namespace EmergencyDispatchSystem
             // Dispatcher assigns a unit to a case in the queue
             Console.WriteLine("\n(Dispatcher assigns unit to the case)");
             EmergencyCase active = queue.dequeue();
-            dispatcher.assignUnit(ambulance, active);
+            dispatcher.assignUnit(active);
 
             // The assigned ambulance unit arrives on scene of the case
             Console.WriteLine("\n(Ambulance on scene)");

@@ -31,9 +31,9 @@ namespace EmergencyDispatchSystem.Operations
             units.Add(u);
         }
 
-        public List<AmbulanceUnit> getAvailableUnits()
+        public AmbulanceUnit getAvailableUnit()
         {
-            return units.FindAll(u => u.isAvailable());
+            return units.Find(u => u.isAvailable());
         }
 
         // Find the ambulence unit and return it to avaliable status (when it completes the case)

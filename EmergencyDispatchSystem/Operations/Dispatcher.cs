@@ -1,5 +1,6 @@
 using System;
 using EmergencyDispatchSystem.Core;
+using EmergencyDispatchSystem.Units;
 
 namespace EmergencyDispatchSystem.Operations
 {
@@ -7,11 +8,13 @@ namespace EmergencyDispatchSystem.Operations
     {
         private string dispatcherId;
         private string name;
+        private AmbulanceFleet fleet;
 
-        public Dispatcher(string dispatcherId, string name)
+        public Dispatcher(string dispatcherId, string name, AmbulanceFleet fleet)
         {
             this.dispatcherId = dispatcherId;
             this.name = name;
+            this.fleet = fleet;
         }
 
         public string DispatcherId
@@ -25,19 +28,21 @@ namespace EmergencyDispatchSystem.Operations
         }
 
         // Assign a unit to the case
-        public void assignUnit(RespondingUnit u, EmergencyCase c)
+        public void assignUnit(EmergencyCase c)
         {
-            u.setStatus(UnitStatus.EnRoute);
-            c.addUnit(u);
-            Console.WriteLine("[DISPATCHER " + dispatcherId + "] " + u.UnitId + " assigned to Case " + c.CaseId + ".");
+            AmbulanceUnit unit = fleet.getAvailableUnit();
+            c.addUnit(unit);
+            fleet.updateUnitStatus(unit.UnitId, UnitStatus.EnRoute);
+            Console.WriteLine("[DISPATCHER " + dispatcherId + "] " + unit.UnitId + " assigned to Case " + c.CaseId + ".");
         }
 
         // Reassign a uni to a didference case
-        public void reassignUnit(RespondingUnit u, EmergencyCase c)
+        public void reassignUnit(EmergencyCase c)
         {
-            u.setStatus(UnitStatus.EnRoute);
-            c.addUnit(u);
-            Console.WriteLine("[DISPATCHER " + dispatcherId + "] " + u.UnitId + " reassigned to Case " + c.CaseId + ".");
+            AmbulanceUnit unit = fleet.getAvailableUnit();
+            c.addUnit(unit);
+            fleet.updateUnitStatus(unit.UnitId, UnitStatus.EnRoute);
+            Console.WriteLine("[DISPATCHER " + dispatcherId + "] " + unit.UnitId + " reassigned to Case " + c.CaseId + ".");
         }
 
         // dispatch extra support units
