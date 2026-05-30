@@ -36,7 +36,7 @@ namespace EmergencyDispatchSystem.Operations
         // Update the severity level of the case
         public void assignSeverityLevel(EmergencyCase c)
         {
-            c.SeverityLevel = "Critical";
+            c.SeverityLevel = SeverityLevel.Critical;
             Console.WriteLine("[Call Centre Operator " + operatorId + "] Severity set to Critical for Case " + c.CaseId);
         }
     }

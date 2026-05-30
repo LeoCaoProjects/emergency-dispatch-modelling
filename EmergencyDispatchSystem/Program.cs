@@ -39,7 +39,7 @@ namespace EmergencyDispatchSystem
 
             // The assigned ambulance unit arrives on scene of the case
             Console.WriteLine("\n(Ambulance on scene)");
-            ambulance.updateStatus("On Scene");
+            ambulance.updateStatus(UnitStatus.OnScene);
 
             // Issue has been flagged on scene, requesting for police to be dispatched
             Console.WriteLine("\n(Issue flagged, police dispatched)");
@@ -53,7 +53,7 @@ namespace EmergencyDispatchSystem
 
             // Step 7: The case has been completed
             Console.WriteLine("\n(Case completed)");
-            active.setStatus("Completed");
+            active.setStatus(CaseStatus.Resolved);
             IncidentReport report = new IncidentReport();
             report.generateReport(active);
             fleet.returnUnitToAvailable("AMB-01");

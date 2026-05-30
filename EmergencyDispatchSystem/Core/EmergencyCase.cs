@@ -3,12 +3,28 @@ using System.Collections.Generic;
 
 namespace EmergencyDispatchSystem.Core
 {
+    public enum SeverityLevel
+    {
+        Low,
+        Medium,
+        High,
+        Critical
+    }
+
+    public enum CaseStatus
+    {
+        Pending,
+        Active,
+        Resolved,
+        Closed
+    }
+
     public class EmergencyCase
     {
         private string caseId;
         private string location;
-        private string severityLevel;
-        private string status;
+        private SeverityLevel severityLevel;
+        private CaseStatus status;
         private DateTime timestamp;
         private EmergencyType type;
         private List<RespondingUnit> assignedUnits;
@@ -17,8 +33,8 @@ namespace EmergencyDispatchSystem.Core
         {
             this.caseId = caseId;
             this.location = location;
-            this.severityLevel = "";
-            this.status = "Pending";
+            this.severityLevel = SeverityLevel.Low;
+            this.status = CaseStatus.Pending;
             this.timestamp = DateTime.UtcNow;
             this.type = null;
             this.assignedUnits = new List<RespondingUnit>();
@@ -34,13 +50,13 @@ namespace EmergencyDispatchSystem.Core
             get { return location; }
         }
 
-        public string SeverityLevel
+        public SeverityLevel SeverityLevel
         {
             get { return severityLevel; }
             set { severityLevel = value; }
         }
 
-        public string Status
+        public CaseStatus Status
         {
             get { return status; }
         }
@@ -61,12 +77,12 @@ namespace EmergencyDispatchSystem.Core
             get { return assignedUnits; }
         }
 
-        public void setStatus(string status)
+        public void setStatus(CaseStatus status)
         {
             this.status = status;
         }
 
-        public string getStatus()
+        public CaseStatus getStatus()
         {
             return this.status;
         }

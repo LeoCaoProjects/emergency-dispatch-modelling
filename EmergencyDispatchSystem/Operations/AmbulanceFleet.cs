@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using EmergencyDispatchSystem.Core;
 using EmergencyDispatchSystem.Units;
 
 namespace EmergencyDispatchSystem.Operations
@@ -41,13 +42,13 @@ namespace EmergencyDispatchSystem.Operations
             AmbulanceUnit u = units.Find(u => u.UnitId == id);
             if (u != null)
             {
-                u.setStatus("Available");
+                u.setStatus(UnitStatus.Available);
                 Console.WriteLine("[FLEET] Unit " + id + " returned to Available.");
             }
         }
 
         // Update the status of the ambulence
-        public void updateUnitStatus(string id, string s)
+        public void updateUnitStatus(string id, UnitStatus s)
         {
             AmbulanceUnit u = units.Find(u => u.UnitId == id);
             if (u != null) u.setStatus(s);

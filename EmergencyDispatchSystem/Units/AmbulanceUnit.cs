@@ -32,7 +32,7 @@ namespace EmergencyDispatchSystem.Units
             Console.WriteLine("[" + UnitId + "] Issue flagged: " + desc);
         }
 
-        public void updateStatus(string status)
+        public void updateStatus(UnitStatus status)
         {
             setStatus(status);
             Console.WriteLine("[" + UnitId + "] Status updated to: " + status);

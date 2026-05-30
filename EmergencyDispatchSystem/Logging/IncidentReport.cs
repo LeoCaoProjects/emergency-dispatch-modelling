@@ -44,7 +44,7 @@ namespace EmergencyDispatchSystem.Logging
             this.reportId = "Report Id: " + c.CaseId;
             this.caseId = c.CaseId;
             this.generatedAt = DateTime.UtcNow;
-            this.outcome = c.getStatus();
+            this.outcome = c.getStatus().ToString();
             Console.WriteLine("[REPORT] " + reportId + " generated for Case " + caseId + ", Outcome: " + outcome);
         }
     }
