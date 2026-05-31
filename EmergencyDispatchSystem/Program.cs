@@ -15,7 +15,7 @@ namespace EmergencyDispatchSystem
             Console.WriteLine("Emergency Dispatch System Demo\n");
             // Setup 
             AmbulanceFleet fleet = AmbulanceFleet.GetInstance();
-            AmbulanceUnit ambulance = new AmbulanceUnit("AMB-01", "", 2, "");
+            AmbulanceUnit ambulance = new AmbulanceUnit(2, "");
             fleet.addUnit(ambulance);
         
             Dispatcher dispatcher = new Dispatcher("D-01", "Leo");
@@ -39,7 +39,7 @@ namespace EmergencyDispatchSystem
             // Issue has been flagged on scene, requesting for police to be dispatched
             Console.WriteLine("\n(Issue flagged, police dispatched)");
             ambulance.flagIssue("police support required.");
-            PoliceUnit police = new PoliceUnit("POL-01", "", "", dispatcher);
+            PoliceUnit police = new PoliceUnit("");
             dispatcher.dispatchSupportUnit(police);
 
             // Police requests even more reinforcements

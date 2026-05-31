@@ -27,8 +27,14 @@ namespace EmergencyDispatchSystem.Operations
 
         public void onReinforcementRequested(RespondingUnit unit)
         {
-            Console.WriteLine("[" + UnitId + "] Requesting reinforcements through Dispatcher.");
-            // dispatchSupportUnit(unit)
+            RespondingUnit requestedUnit;
+
+            if(unit is PoliceUnit) {
+                requestedUnit = new PoliceUnit();
+                Console.WriteLine("[DISPATCHER " + dispatcherId + "] Support unit " + requestedUnit.UnitId + " dispatched.");
+            }
+            
+            
         }
 
 
@@ -48,16 +54,6 @@ namespace EmergencyDispatchSystem.Operations
             c.addUnit(unit);
             unit.updateStatus(UnitStatus.EnRoute);
             Console.WriteLine("[DISPATCHER " + dispatcherId + "] " + unit.UnitId + " reassigned to Case " + c.CaseId + ".");
-        }
-
-        // dispatch extra support units
-        private void dispatchSupportUnit(RespondingUnit unit)
-        {
-            if (u is AmbulanceUnit ambulance)
-            {
-                ambulance.updateStatus(UnitStatus.EnRoute);
-            }
-            Console.WriteLine("[DISPATCHER " + dispatcherId + "] Support unit " + u.UnitId + " dispatched.");
         }
     }
 }

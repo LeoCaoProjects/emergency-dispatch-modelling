@@ -1,4 +1,5 @@
 using System;
+using EmergencyDispatchSystem.Operations;
 
 namespace EmergencyDispatchSystem.Units
 {
@@ -23,26 +24,27 @@ namespace EmergencyDispatchSystem.Units
         // List of observers this unit will notify
         private readonly List<IReinforcementObserver> observers = new List<IReinforcementObserver>();
 
-        public FireUnit(string unitId, string stationId)
-            : base(unitId)
+        public FireUnit(string stationId)
+            : base()
         {
             this.stationId = stationId;
             this.dispatcher = dispatcher;
         }
 
-        void attach(IReinforcementObserver observer) {
+        public void attach(IReinforcementObserver observer) {
             if(!observers.Contains(observer)) {
                 observers.add(observer);
             }
         }
 
-        void detach(IReinforcementObserver observer) {
+        public void detach(IReinforcementObserver observer) {
             observers.remove(observer);
         }
 
         // This will notify all of the observers
         public void requestReinforcements() {
             foreach (var observer in observers) {
+                Console.WriteLine("[" + UnitId + "] Requesting reinforcements through Dispatcher.");
                 observer.onReinforcementRequested(this);
             }
         }
@@ -54,26 +56,27 @@ namespace EmergencyDispatchSystem.Units
         // List of observers this unit will notify
         private readonly List<IReinforcementObserver> observers = new List<IReinforcementObserver>();
 
-        public PoliceUnit(string unitId, string division)
-            : base(unitId)
+        public PoliceUnit(string division)
+            : base()
         {
             this.division = division;
             this.dispatcher = dispatcher;
         }
 
-        void attach(IReinforcementObserver observer) {
+        public void attach(IReinforcementObserver observer) {
             if(!observers.Contains(observer)) {
                 observers.add(observer);
             }
         }
 
-        void detach(IReinforcementObserver observer) {
+        public void detach(IReinforcementObserver observer) {
             observers.remove(observer);
         }
 
         // This will notify all of the observers
         public void requestReinforcements() {
             foreach (var observer in observers) {
+                Console.WriteLine("[" + UnitId + "] Requesting reinforcements through Dispatcher.");
                 observer.onReinforcementRequested(this);
             }
         }

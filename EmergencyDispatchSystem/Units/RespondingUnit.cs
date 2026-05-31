@@ -13,11 +13,17 @@ namespace EmergencyDispatchSystem.Units
     // Abstract class for the responding units.
     public abstract class RespondingUnit
     {
-        private string unitId;
+        private static int nextUnitId = 1;
+        private int unitId;
 
-        protected RespondingUnit(string unitId)
+        protected RespondingUnit()
         {
-            this.unitId = unitId;
+            this.unitId = nextUnitId++;
+        }
+
+        public int UnitId
+        {
+            get { return unitId; }
         }
     }
 
@@ -30,8 +36,8 @@ namespace EmergencyDispatchSystem.Units
         private string vehicleType;
         private UnitStatus status;
 
-        public AmbulanceUnit(string unitId, int crewSize, string vehicleType)
-            : base(unitId)
+        public AmbulanceUnit(int crewSize, string vehicleType)
+            : base()
         {
             this.crewSize = crewSize;
             this.vehicleType = vehicleType;
