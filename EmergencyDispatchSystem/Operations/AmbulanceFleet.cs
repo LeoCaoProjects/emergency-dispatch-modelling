@@ -7,24 +7,32 @@ namespace EmergencyDispatchSystem.Operations
 {
     public class AmbulanceFleet
     {
-        private string fleetId;
-        private List<AmbulanceUnit> units;                      // List of all ambulence units this class handles
+        // List of all ambulence units this class handles
+        private List<AmbulanceUnit> units;                      
 
-        public AmbulanceFleet(string fleetId)
+        // Static variable that stores the single instance of the class
+        private static AmbulanceFleet instance;
+
+        // Private constructor prevents object creation using 'new'
+        private AmbulanceFleet()
         {
-            this.fleetId = fleetId;
             this.units = new List<AmbulanceUnit>();
         }
 
-        public string FleetId
+        // Public static method provides global access to the Singleton object
+        public static AmbulanceFleet GetInstance() 
         {
-            get { return fleetId; }
+            // Create the object only if it does not already exist
+            if (instance == null)
+            {
+                instance = new AmbulanceFleet();
+            }
+
+            // return the same object instance.
+            return instance;
         }
 
-        public List<AmbulanceUnit> Units
-        {
-            get { return units; }
-        }
+
 
         public void addUnit(AmbulanceUnit u)
         {

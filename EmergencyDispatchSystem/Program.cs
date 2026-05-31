@@ -13,12 +13,12 @@ namespace EmergencyDispatchSystem
         {
 
             Console.WriteLine("Emergency Dispatch System Demo\n");
-
             // Setup 
-            AmbulanceFleet fleet = new AmbulanceFleet("FLEET-01");
+            AmbulanceFleet fleet = AmbulanceFleet.GetInstance();
             AmbulanceUnit ambulance = new AmbulanceUnit("AMB-01", "", 2, "");
             fleet.addUnit(ambulance);
-            Dispatcher dispatcher = new Dispatcher("D-01", "Leo", fleet);
+        
+            Dispatcher dispatcher = new Dispatcher("D-01", "Leo");
             PriorityQueue queue = PriorityQueue.GetInstance();
             CallCentreOperator cco = new CallCentreOperator("CCO-01", "James");
 

@@ -8,13 +8,12 @@ namespace EmergencyDispatchSystem.Operations
     {
         private string dispatcherId;
         private string name;
-        private AmbulanceFleet fleet;
+        private AmbulanceFleet fleet = AmbulanceFleet.GetInstance();
 
-        public Dispatcher(string dispatcherId, string name, AmbulanceFleet fleet)
+        public Dispatcher(string dispatcherId, string name)
         {
             this.dispatcherId = dispatcherId;
             this.name = name;
-            this.fleet = fleet;
         }
 
         public string DispatcherId
