@@ -27,14 +27,19 @@ namespace EmergencyDispatchSystem.Operations
 
         public void onReinforcementRequested(RespondingUnit unit)
         {
-            RespondingUnit requestedUnit;
-
-            if(unit is PoliceUnit) {
-                requestedUnit = new PoliceUnit();
-                Console.WriteLine("[DISPATCHER " + dispatcherId + "] Support unit " + requestedUnit.UnitId + " dispatched.");
+            if (unit is PoliceUnit)
+            {
+                dispatchSupportUnit(new PoliceUnit(""));
             }
-            
-            
+            else if (unit is FireUnit)
+            {
+                dispatchSupportUnit(new FireUnit(""));
+            }
+        }
+
+        private void dispatchSupportUnit(RespondingUnit u)
+        {
+            Console.WriteLine("[DISPATCHER " + dispatcherId + "] Support unit " + u.UnitId + " dispatched.");
         }
 
 

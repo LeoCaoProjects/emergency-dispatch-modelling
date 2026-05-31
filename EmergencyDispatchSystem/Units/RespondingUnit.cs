@@ -54,5 +54,10 @@ namespace EmergencyDispatchSystem.Units
             this.status = status;
             Console.WriteLine("[" + UnitId + "] Status updated to: " + status);
         }
+
+        public void flagIssue(string desc)
+        {
+            Console.WriteLine("[" + UnitId + "] Issue flagged: " + desc);
+        }
     }
 }

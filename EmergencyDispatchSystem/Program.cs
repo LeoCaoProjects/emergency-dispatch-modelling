@@ -40,7 +40,7 @@ namespace EmergencyDispatchSystem
             Console.WriteLine("\n(Issue flagged, police dispatched)");
             ambulance.flagIssue("police support required.");
             PoliceUnit police = new PoliceUnit("");
-            dispatcher.dispatchSupportUnit(police);
+            police.attach(dispatcher);
 
             // Police requests even more reinforcements
             Console.WriteLine("\n(Police requests reinforcements)");

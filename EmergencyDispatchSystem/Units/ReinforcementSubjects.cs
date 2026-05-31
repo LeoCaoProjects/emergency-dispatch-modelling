@@ -1,5 +1,6 @@
 using System;
 using EmergencyDispatchSystem.Operations;
+using System.Collections.Generic;
 
 namespace EmergencyDispatchSystem.Units
 {
@@ -28,17 +29,16 @@ namespace EmergencyDispatchSystem.Units
             : base()
         {
             this.stationId = stationId;
-            this.dispatcher = dispatcher;
         }
 
         public void attach(IReinforcementObserver observer) {
             if(!observers.Contains(observer)) {
-                observers.add(observer);
+                observers.Add(observer);
             }
         }
 
         public void detach(IReinforcementObserver observer) {
-            observers.remove(observer);
+            observers.Remove(observer);
         }
 
         // This will notify all of the observers
@@ -60,17 +60,16 @@ namespace EmergencyDispatchSystem.Units
             : base()
         {
             this.division = division;
-            this.dispatcher = dispatcher;
         }
 
         public void attach(IReinforcementObserver observer) {
             if(!observers.Contains(observer)) {
-                observers.add(observer);
+                observers.Add(observer);
             }
         }
 
         public void detach(IReinforcementObserver observer) {
-            observers.remove(observer);
+            observers.Remove(observer);
         }
 
         // This will notify all of the observers

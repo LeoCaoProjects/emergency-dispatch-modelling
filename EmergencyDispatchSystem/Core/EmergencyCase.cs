@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using EmergencyDispatchSystem.EmergencyTypes;
+using EmergencyDispatchSystem.Units;
 
 namespace EmergencyDispatchSystem.Core
 {
