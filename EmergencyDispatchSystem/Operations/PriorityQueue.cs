@@ -39,6 +39,7 @@ namespace EmergencyDispatchSystem.Operations
         public void enqueue(EmergencyCase c)
         {
             cases.Add(c);
+            sortBySeverity();
             Console.WriteLine("[QUEUE] Case " + c.CaseId + " enqueued (Severity: " + c.SeverityLevel + ").");
         }
 

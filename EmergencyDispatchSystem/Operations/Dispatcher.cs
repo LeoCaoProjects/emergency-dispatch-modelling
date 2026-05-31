@@ -4,7 +4,16 @@ using EmergencyDispatchSystem.Units;
 
 namespace EmergencyDispatchSystem.Operations
 {
-    public class Dispatcher
+
+    // This is the Observer interface where concrete observers that implement this
+    // will get notified with onReinforcementRequested
+    public interface IReinforcementObserver
+    {
+        void onReinforcementRequested(RespondingUnit unit);
+    }
+
+
+    public class Dispatcher : IReinforcementObserver
     {
         private string dispatcherId;
         private string name;
@@ -16,15 +25,12 @@ namespace EmergencyDispatchSystem.Operations
             this.name = name;
         }
 
-        public string DispatcherId
+        public void onReinforcementRequested(RespondingUnit unit)
         {
-            get { return dispatcherId; }
+            Console.WriteLine("[" + UnitId + "] Requesting reinforcements through Dispatcher.");
+            // dispatchSupportUnit(unit)
         }
 
-        public string Name
-        {
-            get { return name; }
-        }
 
         // Assign a unit to the case
         public void assignUnit(EmergencyCase c)
@@ -45,7 +51,7 @@ namespace EmergencyDispatchSystem.Operations
         }
 
         // dispatch extra support units
-        public void dispatchSupportUnit(RespondingUnit u)
+        private void dispatchSupportUnit(RespondingUnit unit)
         {
             if (u is AmbulanceUnit ambulance)
             {

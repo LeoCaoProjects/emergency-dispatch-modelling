@@ -1,42 +1,46 @@
 using System;
-using EmergencyDispatchSystem.Core;
 
 namespace EmergencyDispatchSystem.Units
 {
+    public enum UnitStatus
+    {
+        Available,
+        EnRoute,
+        OnScene,
+        Unavailable
+    }
+
+    // Abstract class for the responding units.
+    public abstract class RespondingUnit
+    {
+        private string unitId;
+
+        protected RespondingUnit(string unitId)
+        {
+            this.unitId = unitId;
+        }
+    }
+
+
+    // Concrete responding unit class
+
     public class AmbulanceUnit : RespondingUnit
     {
         private int crewSize;
         private string vehicleType;
         private UnitStatus status;
 
-        public AmbulanceUnit(string unitId, string location, int crewSize, string vehicleType)
-            : base(unitId, location)
+        public AmbulanceUnit(string unitId, int crewSize, string vehicleType)
+            : base(unitId)
         {
             this.crewSize = crewSize;
             this.vehicleType = vehicleType;
             this.status = UnitStatus.Available;
         }
 
-        public int CrewSize
-        {
-            get { return crewSize; }
-            set { crewSize = value; }
-        }
-
-        public string VehicleType
-        {
-            get { return vehicleType; }
-            set { vehicleType = value; }
-        }
-
         public bool isAvailable()
         {
             return status == UnitStatus.Available;
-        }
-
-        public void flagIssue(string desc)
-        {
-            Console.WriteLine("[" + UnitId + "] Issue flagged: " + desc);
         }
 
         public void updateStatus(UnitStatus status)
