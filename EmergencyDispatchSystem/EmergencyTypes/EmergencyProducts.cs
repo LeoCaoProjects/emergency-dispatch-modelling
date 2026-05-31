@@ -8,7 +8,7 @@ namespace EmergencyDispatchSystem.EmergencyTypes
 
     public interface IEmergencyType
     {
-        public abstract string getEmergencyTypeDetails();
+        string getEmergencyTypeDetails();
     }
 
 
@@ -29,7 +29,7 @@ namespace EmergencyDispatchSystem.EmergencyTypes
             this.requiresEvacuation = requiresEvacuation;
         }
 
-        public override string getTypeDetails()
+        public string getEmergencyTypeDetails()
         {
             return "(Fire) Hazard Level: " + hazardLevel + ", Evacuation Required: " + requiresEvacuation;
         }
@@ -49,7 +49,7 @@ namespace EmergencyDispatchSystem.EmergencyTypes
             this.suspectPresent = suspectPresent;
         }
 
-        public override string getTypeDetails()
+        public string getEmergencyTypeDetails()
         {
             return "(Police) Threat Level: " + threatLevel + ", Suspect Present: " + suspectPresent;
         }
@@ -70,7 +70,7 @@ namespace EmergencyDispatchSystem.EmergencyTypes
         }
 
 
-        public override string getTypeDetails()
+        public string getEmergencyTypeDetails()
         {
             return "(Medical) Condition: " + patientCondition + ", Transport Required: " + requiresTransport;
         }

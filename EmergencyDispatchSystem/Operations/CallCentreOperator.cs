@@ -1,5 +1,6 @@
 using System;
 using EmergencyDispatchSystem.Core;
+using EmergencyDispatchSystem.EmergencyTypes;
 
 namespace EmergencyDispatchSystem.Operations
 {
@@ -22,7 +23,7 @@ namespace EmergencyDispatchSystem.Operations
         {
             string caseId = DateTime.UtcNow.Ticks.ToString().Substring(10, 5);
             EmergencyCase ec = new EmergencyCase(caseId, "NZ");
-            ec.type = creator;
+            ec.Type = creator.createEmergency();
             Console.WriteLine("[Call Centre Operator " + operatorId + "] Emergency call logged for Case ID " + caseId);
             priorityQueue.enqueue(ec);
             return ec;

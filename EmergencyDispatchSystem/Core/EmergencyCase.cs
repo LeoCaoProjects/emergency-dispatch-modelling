@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using EmergencyDispatchSystem.EmergencyTypes;
 
 namespace EmergencyDispatchSystem.Core
 {
@@ -26,7 +27,7 @@ namespace EmergencyDispatchSystem.Core
         private SeverityLevel severityLevel;
         private CaseStatus status;
         private DateTime timestamp;
-        private EmergencyType type;
+        private IEmergencyType type;
         private List<RespondingUnit> assignedUnits;
 
         public EmergencyCase(string caseId, string location)
@@ -66,7 +67,7 @@ namespace EmergencyDispatchSystem.Core
             get { return timestamp; }
         }
 
-        public EmergencyType Type
+        public IEmergencyType Type
         {
             get { return type; }
             set { type = value; }
