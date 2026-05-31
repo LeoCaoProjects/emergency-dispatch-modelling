@@ -24,9 +24,8 @@ namespace EmergencyDispatchSystem
 
             // The call centre operator logs a call onto the system
             Console.WriteLine("(call centre operator logs emergency call)");
-            EmergencyCase ec = cco.logEmergencyCall();
+            EmergencyCase ec = cco.logEmergencyCall(new MedicalEmergency());
             cco.assignSeverityLevel(ec);
-            ec.Type = new MedicalEmergency("", true);
 
             // Dispatcher assigns a unit to a case in the queue
             Console.WriteLine("\n(Dispatcher assigns unit to the case)");

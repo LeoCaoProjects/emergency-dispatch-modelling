@@ -15,21 +15,14 @@ namespace EmergencyDispatchSystem.Operations
             this.name = name;
         }
 
-        public string OperatorId
-        {
-            get { return operatorId; }
-        }
 
-        public string Name
-        {
-            get { return name; }
-        }
 
         // Create and log an case whenever the operator recieves an emergency call
-        public EmergencyCase logEmergencyCall()
+        public EmergencyCase logEmergencyCall(EmergencyCreator creator)
         {
             string caseId = DateTime.UtcNow.Ticks.ToString().Substring(10, 5);
             EmergencyCase ec = new EmergencyCase(caseId, "NZ");
+            ec.type = creator;
             Console.WriteLine("[Call Centre Operator " + operatorId + "] Emergency call logged for Case ID " + caseId);
             priorityQueue.enqueue(ec);
             return ec;

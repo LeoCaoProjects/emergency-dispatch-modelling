@@ -51,7 +51,7 @@ namespace EmergencyDispatchSystem.Operations
             return c;
         }
 
-        public void sortBySeverity()
+        private void sortBySeverity()
         {
         }
 
