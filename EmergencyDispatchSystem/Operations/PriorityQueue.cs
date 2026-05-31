@@ -4,12 +4,14 @@ using EmergencyDispatchSystem.Core;
 
 namespace EmergencyDispatchSystem.Operations
 {
-    public class PriorityQueue
+    public sealed class PriorityQueue
     {
         private List<EmergencyCase> cases;
 
         // Static variable that stores the single instance of the class
-        private static PriorityQueue instance;
+        // Lazy<T> keeps it thread safe and only creates the object when it is first needed
+        private static readonly Lazy<PriorityQueue> instance =
+            new Lazy<PriorityQueue>(() => new PriorityQueue());
 
         // Private constructor prevents object creation using 'new'
         private PriorityQueue()
@@ -18,15 +20,9 @@ namespace EmergencyDispatchSystem.Operations
         }
 
         // Public static method provides global access to the Singleton object
-        public static PriorityQueue GetInstance() {
-
-            // Create the object only if it does not already exist
-            if (instance == null) {
-                instance = new PriorityQueue();
-            }
-
-            // Return the same object instance
-            return instance;                    
+        public static PriorityQueue GetInstance()
+        {
+            return instance.Value;
         }
 
 
