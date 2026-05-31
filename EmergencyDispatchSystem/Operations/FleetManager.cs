@@ -5,27 +5,27 @@ using EmergencyDispatchSystem.Units;
 
 namespace EmergencyDispatchSystem.Operations
 {
-    public class AmbulanceFleet
+    public class FleetManager
     {
         // List of all ambulence units this class handles
         private List<AmbulanceUnit> units;                      
 
         // Static variable that stores the single instance of the class
-        private static AmbulanceFleet instance;
+        private static FleetManager instance;
 
         // Private constructor prevents object creation using 'new'
-        private AmbulanceFleet()
+        private FleetManager()
         {
             this.units = new List<AmbulanceUnit>();
         }
 
         // Public static method provides global access to the Singleton object
-        public static AmbulanceFleet GetInstance() 
+        public static FleetManager GetInstance() 
         {
             // Create the object only if it does not already exist
             if (instance == null)
             {
-                instance = new AmbulanceFleet();
+                instance = new FleetManager();
             }
 
             // return the same object instance.

@@ -14,7 +14,7 @@ namespace EmergencyDispatchSystem
 
             Console.WriteLine("Emergency Dispatch System Demo\n");
             // Setup 
-            AmbulanceFleet fleet = AmbulanceFleet.GetInstance();
+            FleetManager fleet = FleetManager.GetInstance();
             AmbulanceUnit ambulance = new AmbulanceUnit(2, "");
             fleet.addUnit(ambulance);
         

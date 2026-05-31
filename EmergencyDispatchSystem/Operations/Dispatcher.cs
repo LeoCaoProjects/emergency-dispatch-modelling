@@ -17,7 +17,7 @@ namespace EmergencyDispatchSystem.Operations
     {
         private string dispatcherId;
         private string name;
-        private AmbulanceFleet fleet = AmbulanceFleet.GetInstance();
+        private FleetManager fleet = FleetManager.GetInstance();
 
         public Dispatcher(string dispatcherId, string name)
         {
