@@ -43,14 +43,28 @@ namespace EmergencyDispatchSystem.Operations
         public EmergencyCase dequeue()
         {
             if (isEmpty()) return null;
+            // Re-sort first so the most severe case is returned
+            sortBySeverity();
             EmergencyCase c = cases[0];
             cases.RemoveAt(0);
             Console.WriteLine("[QUEUE] Case " + c.CaseId + " dequeued for dispatch.");
             return c;
         }
 
+        // Hand every queued case to the dispatcher, highest severity first
+        public void dispatchAll(Dispatcher dispatcher)
+        {
+            while (!isEmpty())
+            {
+                EmergencyCase c = dequeue();
+                dispatcher.assignUnit(c);
+            }
+        }
+
+        // Order the cases so the highest severity (Critical) sits at the front of the queue
         private void sortBySeverity()
         {
+            cases.Sort((a, b) => b.SeverityLevel.CompareTo(a.SeverityLevel));
         }
 
         public bool isEmpty()

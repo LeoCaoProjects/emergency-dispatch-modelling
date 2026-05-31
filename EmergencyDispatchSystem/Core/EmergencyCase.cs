@@ -93,7 +93,6 @@ namespace EmergencyDispatchSystem.Core
         public void addUnit(RespondingUnit u)
         {
             this.assignedUnits.Add(u);
-            Console.WriteLine("[EmergencyCase] Unit " + u.UnitId + " added to Case " + caseId);
         }
     }
 }

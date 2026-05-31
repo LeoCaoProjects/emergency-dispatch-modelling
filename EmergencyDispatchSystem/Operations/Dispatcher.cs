@@ -40,8 +40,11 @@ namespace EmergencyDispatchSystem.Operations
         private void dispatchSupportUnit(RespondingUnit u)
         {
             Console.WriteLine("[DISPATCHER " + dispatcherId + "] Support unit " + u.UnitId + " dispatched.");
+            if (u is IReinforcementSubject subject)
+            {
+                subject.attach(this);
+            }
         }
-
 
         // Assign a unit to the case
         public void assignUnit(EmergencyCase c)
